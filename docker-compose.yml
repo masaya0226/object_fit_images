@@ -1,0 +1,16 @@
+version: "3"
+services:
+  object_fit_images:
+    build:
+      context: .
+      dockerfile: "Dockerfile"     
+    volumes:
+      - type: bind
+        source: "./input"
+        target: "/src/input"
+      - type: bind
+        source: "./output"
+        target: "/src/output"
+      - type: bind
+        source: "./main.py"
+        target: "/src/main.py"
